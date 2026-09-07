@@ -7,10 +7,6 @@ import streamlit as st
 from rag import ask_book_rag
 
 
-# ============================================
-# PAGE
-# ============================================
-
 st.set_page_config(
     page_title="BookFinder",
     page_icon="📚",
@@ -18,9 +14,6 @@ st.set_page_config(
 )
 
 
-# ============================================
-# DATABASE
-# ============================================
 
 DB_PATH = "feedback.db"
 
@@ -75,9 +68,6 @@ def save_feedback(
     conn.close()
 
 
-# ============================================
-# UI
-# ============================================
 
 st.title("📚 BookFinder")
 
@@ -102,9 +92,7 @@ if st.button("Recommend books") and query:
     st.session_state["result"] = result
 
 
-# ============================================
-# RESULT
-# ============================================
+
 
 if "result" in st.session_state:
 
